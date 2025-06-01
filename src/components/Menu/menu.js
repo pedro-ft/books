@@ -1,28 +1,35 @@
 import styled from 'styled-components';
 
 const opcoes = ['CATEGORIAS', 'FAVORITOS', 'MEUS LIVROS'];
-const Opcao = styled.li`
-    min-width: 120px;
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    height: 100%;
-    padding: 0 5px;
-    cursor: pointer;
+const OpcaoItem = styled.li`
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 10px 5px;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: #472779;
+  }
 `
-const MenuOpcao = styled.ul`
+const MenuOpcaoContainer = styled.ul`
    display: flex;
+   align-items: center;
+   padding: 0;
+   margin: 0;
+   gap: 25px;
 `
 
 function Menu() {
     return(
-        <MenuOpcao>
-            {opcoes.map((texto) => (
-                <Opcao><p>{texto}</p></Opcao>
-            ))}
-        </MenuOpcao>
+        <nav>
+            <MenuOpcaoContainer>
+                {opcoes.map((texto) => (
+                    <OpcaoItem><p>{texto}</p></OpcaoItem>
+                ))}
+            </MenuOpcaoContainer>
+        </nav>
     )
 }
 

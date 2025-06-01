@@ -3,9 +3,10 @@ import styled from 'styled-components';
 
 const LogoContainer = styled.div`
   display: flex;
+  align-items: center;
 `
 const LogoImg = styled.img`
-  margin-right: 10px;
+  height: 150px;
 `
 
 function Logo() {

@@ -3,20 +3,33 @@ import sacola from '../../imagens/sacola.svg';
 import styled from 'styled-components';
 
 const icones = [perfil, sacola];
-const Icone = styled.li`
-    margin-right: 40px;
-    width: 25px;
+const IconeItem = styled.li`
+    img {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: block;
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+      opacity: 0.7;
+    }
+  }
 `
 const IconesConjunto = styled.ul`
     display: flex;
     align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    gap: 25px;
 `
 
 function Icones () {
     return(
         <IconesConjunto>
           {icones.map((icone) => (
-            <Icone><img src={icone} alt='icone'></img></Icone>
+            <IconeItem><img src={icone} alt='icone'></img></IconeItem>
           ))}
         </IconesConjunto>
     )
