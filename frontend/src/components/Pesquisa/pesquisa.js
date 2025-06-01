@@ -1,7 +1,7 @@
 import Input from "../Input/input"
 import styled from "styled-components"
-import { useState } from "react"
-import { livros } from "./dadosPesquisa"
+import { useEffect, useState } from "react"
+import { getLivros } from "../../services/livros"
 
 const PesquisaContainer = styled.section`
     color: #FFF;
@@ -78,7 +78,17 @@ const MensagemSemResultados = styled.p`
 
 function Pesquisa() {
     const [livrosPesquisados, setLivrosPesquisados] = useState([]);
+    const [livros, setLivros] = useState([])
     const [textoDigitadoAnteriormente, setTextoDigitadoAnteriormente] = useState("");
+
+    useEffect(() => {
+      fetchLivros()
+    }, [])
+
+    async function fetchLivros() {
+      const livrosDaAPI = await getLivros()
+      setLivros(livrosDaAPI)
+    }
 
     const handlePesquisa = (evento) => {
     const textoDigitado = evento.target.value.toLowerCase();
