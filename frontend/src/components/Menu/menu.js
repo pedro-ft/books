@@ -1,6 +1,7 @@
 import styled from 'styled-components';
+import {Link} from 'react-router-dom'
 
-const opcoes = ['CATEGORIAS', 'FAVORITOS', 'MEUS LIVROS'];
+const opcoes = ['CATEGORIAS', 'FAVORITOS', 'ESTANTE'];
 const OpcaoItem = styled.li`
   font-size: 16px;
   font-weight: 500;
@@ -26,7 +27,7 @@ function Menu() {
         <nav>
             <MenuOpcaoContainer>
                 {opcoes.map((texto) => (
-                    <OpcaoItem><p>{texto}</p></OpcaoItem>
+                    <Link to={`/${texto.toLowerCase()}`}><OpcaoItem><p>{texto}</p></OpcaoItem></Link>
                 ))}
             </MenuOpcaoContainer>
         </nav>

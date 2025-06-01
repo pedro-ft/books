@@ -2,6 +2,7 @@ import Logo from '../Logo';
 import Menu from '../Menu/menu';
 import Icones from '../Icones/icones';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 const LeftSection = styled.div`
   display: flex;
@@ -23,7 +24,9 @@ function Header () {
     return(
         <HeaderContainer>
             <LeftSection>
+              <Link to='/'>
                 <Logo/>
+              </Link>
                 <Menu/>
             </LeftSection>
             <Icones/>
