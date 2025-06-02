@@ -25,6 +25,19 @@ const GlobalStyle = createGlobalStyle`
   li {
       list-style: none;
   }
+  
+   a {
+    text-decoration: none;
+    color: inherit;
+
+    &:visited,
+    &:hover,
+    &:active,
+    &:focus {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
 `
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

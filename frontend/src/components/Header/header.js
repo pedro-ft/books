@@ -13,7 +13,7 @@ const LeftSection = styled.div`
 const HeaderContainer = styled.header`
   background-color: #fff;
   display: flex;
-  align-items: center; /* Alinha verticalmente os itens no centro */
+  align-items: center;
   justify-content: space-between; 
   padding: 0 3%;
   height: 10%;
